@@ -1,0 +1,24 @@
+Projetin ROADMAP
+
+{ -theme.FONT
+  -useFont }
+
+-Services.Api
+-SplashScreen
+-theme.COLOR
+-Home
+-routes.BottomTab
+
+-components.BOTÕES
+
+(Api Required) -----------------------------
+
+{ -components.ModalFilmin
+  -ListaIndicações }
+
+-components.Cards
+
+-AsyncStorage
+-Context
+-ScreensPergunta
+
