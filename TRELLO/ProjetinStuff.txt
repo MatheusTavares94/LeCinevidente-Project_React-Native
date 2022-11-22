@@ -1,0 +1,43 @@
+PROJETIN - Partes
+
+Screens:
+	-SplashScreen
+	-Home
+	-Lista Indicações
+	-Screens Pergunta:
+		-Streams
+		-Generos
+		-Década
+		-País
+		-Legenda
+		-Ordem Rseultado
+
+Componentes:
+	-Botãozão Começar
+	-Botão resposta/próxima pergunta
+	-Modal Filmin
+	-Cards:
+		-StreamsCard
+		-GenerosCard
+		-DécadaCard
+		-PaísCard
+		-LegendaCard
+		-Ordenar_ResultadoCard
+Context:
+	-ListaFilterPerguntas
+
+routes:
+	-Routes
+
+Services:
+	-API TMDB
+	-AsyncStorage
+
+Assets:
+	-font (useFont)
+	-splash.lottie
+
+theme:
+	{COLOR}
+	{FONT}	
+	
