@@ -3,13 +3,13 @@ Projetin ROADMAP
 { -theme.FONT
   -useFont }
 
--Services.Api
--SplashScreen
--theme.COLOR
--Home
--routes.BottomTab
+-Services.Api - Matheus
+-SplashScreen OK
+-theme.COLOR - PedroC
+-Home - PedroC
+-routes.BottomTab - Luiza
 
--components.BOTÕES
+-components.BOTÕES - Gisele
 
 (Api Required) -----------------------------
 
