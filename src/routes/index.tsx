@@ -9,6 +9,7 @@ import { Home } from "../screens/Home"
 import { ListaFilmes } from "../screens/ListaFilmes"
 import { FilmesPopulares } from "../screens/FilmesPopulares"
 import { Streams } from "../screens/FiltrinStreams/Streams"
+import { Generos } from "../screens/PaginasDeFiltro/Generos"
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -79,8 +80,8 @@ const StackNavigator = () => {
          <Stack.Screen name="SplashScreen" component={SplashScreen} />
          <Stack.Screen name="HomeScreen" component={TabNavigator} />
          <Stack.Screen name="Streams" component={Streams}/>
-         {/* <Stack.Screen name="Generos" component={}/>
-         <Stack.Screen name="Decada" component={}/>
+         <Stack.Screen name="Generos" component={Generos}/>
+         {/*<Stack.Screen name="Decada" component={}/>
          <Stack.Screen name="Pais" component={}/>
          <Stack.Screen name="OrderBy" component={}/> */}
       </Stack.Navigator>

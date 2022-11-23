@@ -25,7 +25,7 @@ export const Streams = () => {
    return (
       <View style={styles.container}>
          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Escolha até 3 gêneros de Filme</Text>
+            <Text style={styles.title}>Escolha os seus Streams favoritos</Text>
          </View>
          <FlatList
             data={listaStreams}
@@ -35,7 +35,7 @@ export const Streams = () => {
             renderItem={item => <CardStream stream={item.item} />}
          />
          <View style={styles.buttonContainer}>
-            <ButtonGo next="Genero" />
+            <ButtonGo title="Avançar" next={"Generos"}/>
          </View>
       </View>
    )
