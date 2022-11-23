@@ -1,11 +1,11 @@
 Projetin ROADMAP
 
 { -theme.FONT
-  -useFont }
+  -useFont } OK
 
 -Services.Api - Matheus
 -SplashScreen OK
--theme.COLOR - PedroC
+-theme.COLOR - OK
 -Home - PedroC
 -routes.BottomTab - Luiza
 
