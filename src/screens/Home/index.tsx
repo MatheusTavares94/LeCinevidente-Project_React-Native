@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { styles } from "./style";
+import { styles } from "./styles";
+import themes from "../../themes";
 
 import Icon from '../../../assets/icon.png'
 
@@ -10,24 +11,20 @@ import Icon from '../../../assets/icon.png'
 export const Home = () => {
 
   return (
-    <View>
-
-      <View>
-        <AntDesign style={styles.iconBack} name="stepbackward" size={40} color="white" />
-      </View>
+    <View style={styles.containerHome}>
 
       <View>
         <Text style={styles.Text}>
-          Vamos encontrar um filme para ver???
+          bora encontrar um filme pra ver???
         </Text>
 
-        <FontAwesome style={styles.Icon} name="angle-double-down" size={100} color="white"/>
+        <FontAwesome style={styles.Icon} name="angle-double-down" size={100} color="white" />
 
         <TouchableOpacity activeOpacity={0.5}>
-          <Image source={Icon} style={styles.ImageButton}/>
+          <Image source={Icon} style={styles.ImageButton} />
         </TouchableOpacity>
-        
       </View>
+      
     </View>
 
   )

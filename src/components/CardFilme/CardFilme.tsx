@@ -1,31 +1,21 @@
 import React from "react"
-import { View, Text, Image } from "react-native"
-import themes from "../../themes"
+import { View, Text, Image, TouchableOpacity } from "react-native"
+import { styles } from './styles'
 
-export const CardFilme = ({ filme }) => {   
+export const CardFilme = ({ filme }) => {
 
    return (
-      <View
-         style={{
-            marginVertical: 10,
-            marginHorizontal: 30,
-            padding: 10,
-            backgroundColor: themes.COLORS.Roxo.medio,
-            borderRadius: 15,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-         }}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.filmeBox}>
          <Image
             source={{ uri: "https://www.themoviedb.org/t/p/original" + filme.poster_path }}
-            style={{ width: 100, height: 100, borderRadius: 15, marginRight: 20, backgroundColor: themes.COLORS.Roxo.escuro }}
+            style={styles.filmeImagem}
             resizeMode="cover"
          />
          <View>
-            <Text style={{ textAlign: "right", fontSize: 18 }}>
+            <Text style={styles.filmeTitulo}>
                {filme.title}
             </Text>
          </View>
-      </View>
+      </TouchableOpacity>
    )
 }

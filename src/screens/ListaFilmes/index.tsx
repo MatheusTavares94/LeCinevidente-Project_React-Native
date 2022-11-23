@@ -8,7 +8,7 @@ import themes from "../../themes"
 export const ListaFilmes = () => {
 
    return (
-      <View style={{ paddingTop: Constants.statusBarHeight }}>
+      <View style={{ paddingTop: Constants.statusBarHeight, flex: 1, backgroundColor: themes.COLORS.fundo}}>
          <Text style={{color: themes.COLORS.Roxo.escuro}}>Oi, serei uma lista de filmes</Text>
       </View>
    )

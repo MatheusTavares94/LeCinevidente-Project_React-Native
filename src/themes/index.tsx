@@ -30,6 +30,8 @@ export default {
          medio: "rgba(172,134,255,255)",
          escuro: "rgba(114,91,162,255)",
       },
+
+      fundo: "#3E3C42",
    },
 
    FONTS: {
