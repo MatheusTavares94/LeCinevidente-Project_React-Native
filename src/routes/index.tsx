@@ -28,17 +28,17 @@ const TabNavigator = () => {
       <Tab.Navigator
          screenOptions={{
             headerShown: false,
-            tabBarActiveTintColor: "rgba(223,210,254,255)", //cor do ícone selecionado
-            tabBarInactiveTintColor: "rgba(172,134,255,255)", //cor do ícone não selecionado
+            tabBarActiveTintColor: "rgba(172,134,255,255)", //cor do ícone selecionado
+            tabBarInactiveTintColor: "rgba(223,210,254,255)", //cor do ícone não selecionado
             tabBarInactiveBackgroundColor: "#000",
-            tabBarStyle: { backgroundColor: "#000", paddingBottom: 2 },
+            tabBarStyle: { backgroundColor: "#000", paddingBottom: 7, paddingTop: 5, height: 60},
          }}>
          <Tab.Screen
             name="Home"
             component={Home}
             options={{
                tabBarIcon: ({ color }) => {
-                  return <MaterialIcons resizeMode="contain" name="home" color={color} width={30} />
+                  return <MaterialIcons resizeMode="contain" name="home" color={color} size={30} />
                },
             }}
          />
@@ -48,7 +48,7 @@ const TabNavigator = () => {
             component={ListaFilmes}
             options={{
                tabBarIcon: ({ color }) => {
-                  return <MaterialIcons name="list" color={color} />
+                  return <MaterialIcons resizeMode="contain" name="list" color={color} size={30} />
                },
             }}
          />
@@ -58,7 +58,7 @@ const TabNavigator = () => {
             component={FilmesPopulares}
             options={{
                tabBarIcon: ({ color }) => {
-                  return <MaterialIcons name="elderly" color={color} />
+                  return <MaterialIcons resizeMode="contain" name="elderly" color={color} size={30} />
                },
             }}
          />
