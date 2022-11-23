@@ -9,6 +9,7 @@ export const tmdbApi = axios.create({
       api_key: "387d1928e4dc591cdfacdc56a1a56d93",
       language: "pt-BR",
       watch_region: "BR",
+      region: "BR",
    },
 })
 
@@ -20,8 +21,8 @@ export function criaGuestSession() {
 
 //GUEST SESSION_POST ------------------------------------------------------
 
-export function postsClassificacao(movie_id: number) {
-   return tmdbApi.post(`/movie/${movie_id}/rating`)
+export function postsClassificacao(movie_id: number, rating) {
+   return tmdbApi.post(`/movie/${movie_id}/rating`, rating)
 }
 
 //GUEST SESSION_DELETE ------------------------------------------------------
@@ -33,6 +34,7 @@ export function deleteClassificacao(movie_id: number) {
 
 //GET ------------------------------------------------------
 export function getPopularMovies() {
+
    return tmdbApi.get("movie/popular")
 }
 
@@ -54,4 +56,7 @@ export function getTranslations(movie_id: number) {
 
 export function getFilmesReconmendados(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/similar`)
+}
+export function getGeneros() {
+   return tmdbApi.get(`/genre/movie/list`)
 }
