@@ -1,9 +1,14 @@
 import React from "react"
-import { Text, TouchableOpacity } from "react-native"
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
 import { styles } from "./styles"
 import { useNavigation } from "@react-navigation/native"
 
-export const ButtonGo = ({ title, next }) => {
+interface ButtonGoProps extends TouchableOpacityProps{
+   title: string;
+   next?: string; 
+}
+
+export const ButtonGo = ({ title, next, ...resto }: ButtonGoProps,{} ) => {
    const nav = useNavigation()
 
    return (
