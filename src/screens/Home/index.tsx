@@ -8,7 +8,7 @@ import themes from "../../themes";
 import Icon from '../../../assets/icon.png'
 
 
-export const Home = () => {
+export const Home = ({ navigation: { navigate } }) => {
 
   return (
     <View style={styles.containerHome}>
@@ -20,7 +20,7 @@ export const Home = () => {
 
         <FontAwesome style={styles.Icon} name="angle-double-down" size={100} color="white" />
 
-        <TouchableOpacity activeOpacity={0.5}>
+        <TouchableOpacity activeOpacity={0.5} onPress={() => navigate("Streams")}>
           <Image source={Icon} style={styles.ImageButton} />
         </TouchableOpacity>
       </View>

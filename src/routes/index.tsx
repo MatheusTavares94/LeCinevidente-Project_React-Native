@@ -4,10 +4,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { MaterialIcons } from "@expo/vector-icons"
 
+import { SplashScreen } from "../screens/SplashScreen/SplashScreen"
 import { Home } from "../screens/Home"
 import { ListaFilmes } from "../screens/ListaFilmes"
 import { FilmesPopulares } from "../screens/FilmesPopulares"
-import { SplashScreen } from "../screens/SplashScreen/SplashScreen"
+import { Streams } from "../screens/FiltrinStreams/Streams"
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -77,8 +78,8 @@ const StackNavigator = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SplashScreen">
          <Stack.Screen name="SplashScreen" component={SplashScreen} />
          <Stack.Screen name="HomeScreen" component={TabNavigator} />
-         {/* <Stack.Screen name="Streams" component={}/>
-         <Stack.Screen name="Generos" component={}/>
+         <Stack.Screen name="Streams" component={Streams}/>
+         {/* <Stack.Screen name="Generos" component={}/>
          <Stack.Screen name="Decada" component={}/>
          <Stack.Screen name="Pais" component={}/>
          <Stack.Screen name="OrderBy" component={}/> */}
