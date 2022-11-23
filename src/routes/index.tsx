@@ -15,12 +15,18 @@ const Stack = createNativeStackNavigator<RootStackParamList>()
 export type RootTabParamList = {
    Home: undefined
    Lista: undefined
-   Populares: undefined;
+   Populares: undefined
 }
 
 export type RootStackParamList = {
    SplashScreen: undefined
    HomeScreen: undefined
+   Genero: undefined
+   Streams: undefined
+   Generos: undefined
+   Decada: undefined
+   Pais: undefined
+   OrderBy: undefined
 }
 
 const TabNavigator = () => {
@@ -31,7 +37,7 @@ const TabNavigator = () => {
             tabBarActiveTintColor: "rgba(172,134,255,255)", //cor do ícone selecionado
             tabBarInactiveTintColor: "rgba(223,210,254,255)", //cor do ícone não selecionado
             tabBarInactiveBackgroundColor: "#000",
-            tabBarStyle: { backgroundColor: "#000", paddingBottom: 7, paddingTop: 5, height: 60},
+            tabBarStyle: { backgroundColor: "#000", paddingBottom: 7, paddingTop: 5, height: 60 },
          }}>
          <Tab.Screen
             name="Home"
@@ -68,9 +74,14 @@ const TabNavigator = () => {
 
 const StackNavigator = () => {
    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-         {/* <Stack.Screen name='SplashScreen' component={SplashScreen}  /> */}
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SplashScreen">
+         <Stack.Screen name="SplashScreen" component={SplashScreen} />
          <Stack.Screen name="HomeScreen" component={TabNavigator} />
+         {/* <Stack.Screen name="Streams" component={}/>
+         <Stack.Screen name="Generos" component={}/>
+         <Stack.Screen name="Decada" component={}/>
+         <Stack.Screen name="Pais" component={}/>
+         <Stack.Screen name="OrderBy" component={}/> */}
       </Stack.Navigator>
    )
 }
