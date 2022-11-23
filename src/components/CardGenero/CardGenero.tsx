@@ -7,9 +7,9 @@ export const CardGenero = ({ genero }) => {
     
    return (
       <TouchableOpacity
-         style={styles.cardContainer}>        
+      style={styles.cardContainer}>        
          <View>
-            <Text style={{ textAlign: "right", fontSize: 18, color: "white" }}>
+            <Text style={styles.cardText}>
                {genero.name}               
             </Text>
          </View>

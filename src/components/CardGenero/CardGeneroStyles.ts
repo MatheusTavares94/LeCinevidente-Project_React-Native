@@ -4,7 +4,8 @@ import themes from "../../themes";
 export const styles = StyleSheet.create({
     cardContainer: {
         marginVertical: 10,
-        marginHorizontal: 30,
+        marginHorizontal: 10,
+        width:'40%',
         padding: 10,
         backgroundColor: themes.COLORS.Roxo.escuro,
         borderRadius: 15,
@@ -14,8 +15,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         
     },
-    cardText: {        
-        fontSize: 18,
+    cardText: {    
+        textAlign: "center",    
+        fontSize: 14,
         color: "white"
     }
 
