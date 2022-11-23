@@ -20,13 +20,13 @@ export function criaGuestSession() {
 
 //GUEST SESSION_POST ------------------------------------------------------
 
-export function postsClassificacao(movie_id) {
+export function postsClassificacao(movie_id: number) {
    return tmdbApi.post(`/movie/${movie_id}/rating`)
 }
 
 //GUEST SESSION_DELETE ------------------------------------------------------
 
-export function deleteClassificacao(movie_id) {
+export function deleteClassificacao(movie_id: number) {
    return tmdbApi.delete(`/movie/${movie_id}/rating`)
 }
 
@@ -44,14 +44,14 @@ export function getStreams() {
    return tmdbApi.get("/watch/providers/movie")
 }
 
-export function getMovieById(movie_id) {
+export function getMovieById(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}`)
 }
 
-export function getTranslations(movie_id) {
+export function getTranslations(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/translations`)
 }
 
-export function getFilmesReconmendados(movie_id) {
+export function getFilmesReconmendados(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/similar`)
 }
