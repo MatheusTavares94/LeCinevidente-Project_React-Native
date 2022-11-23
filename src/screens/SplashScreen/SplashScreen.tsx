@@ -6,7 +6,7 @@ import { styles } from "./styles"
 export const SplashScreen = () => {
    return (
       <View style={styles.container}>
-         <Lottie autoPlay source={require("../../assets/leCineSplashScreen.json")} loop={true} />
+         <Lottie autoPlay source={require("../../assets/leCineSplashScreen.json")} />
       </View>
    )
 }

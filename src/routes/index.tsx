@@ -1,6 +1,6 @@
 import React from 'react';
-//import Home from '../screens';
-//import ListaFilmes from '../screens';
+import { Home } from '../screens/Home';
+import { ListaFilmes } from '../screens/ListaFilmes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
