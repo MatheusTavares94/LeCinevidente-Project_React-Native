@@ -6,6 +6,7 @@ import { CardStream } from "../../components/CardStreams/CardStream"
 import { styles } from "./styles"
 
 export const Streams = () => {
+   const [streamSelected, setStreamSelected] = useState<number[]>([])
    const [listaStreams, setListaStreams] = useState<[]>([])
 
    function obterStreams() {
@@ -27,15 +28,18 @@ export const Streams = () => {
          <View style={styles.titleContainer}>
             <Text style={styles.title}>Escolha os seus Streams favoritos</Text>
          </View>
+         
          <FlatList
             data={listaStreams}
             numColumns={2}
             showsVerticalScrollIndicator={false}
-            //keyExtractor={(item, index) => item.provider_id}
-            renderItem={item => <CardStream stream={item.item} />}
+            //keyExtractor={item => item.index}
+            renderItem={({item}) => (
+               <CardStream stream={item} selected={streamSelected} setSelected={setStreamSelected} />
+            )}
          />
          <View style={styles.buttonContainer}>
-            <ButtonGo title="Avançar" next={"Generos"}/>
+            <ButtonGo title="Avançar" next={"Generos"}  />
          </View>
       </View>
    )
