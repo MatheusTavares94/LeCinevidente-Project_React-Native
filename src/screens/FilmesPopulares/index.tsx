@@ -3,6 +3,7 @@ import { View, Text, FlatList } from "react-native"
 import { getPopularMovies } from "../../services/api"
 import { CardFilme } from "../../components/CardFilme/CardFilme"
 import Constants from "expo-constants"
+import themes from "../../themes"
 
 export const FilmesPopulares = () => {
    const [filmesPopulares, setFilmesPopulares] = useState<[]>([])
@@ -22,7 +23,7 @@ export const FilmesPopulares = () => {
    }, [])
 
    return (
-      <View style={{ paddingTop: Constants.statusBarHeight }}>
+      <View style={{ paddingTop: Constants.statusBarHeight, backgroundColor: themes.COLORS.fundo }}>
          <FlatList
             data={filmesPopulares}
             renderItem={item => <CardFilme filme={item.item} />}

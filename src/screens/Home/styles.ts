@@ -1,17 +1,20 @@
 import { StyleSheet } from "react-native";
 import Constants from "expo-constants"
+import themes from "../../themes";
 
 export const styles = StyleSheet.create({
 
-  iconBack: {
-    paddingTop: Constants.statusBarHeight,
-    display: "flex",
-    marginLeft: 300
+  containerHome: {
+    backgroundColor: themes.COLORS.fundo,
+    justifyContent: "center",
+    flexDirection: "column",
+    alignContent: "center",
+    flex: 1
   },
 
   Text: {
     display: "flex",
-    marginTop: 10,
+    marginTop: 80,
     textAlign: "center",
     fontSize: 28,
     color: "white",
