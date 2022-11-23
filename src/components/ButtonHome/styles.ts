@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
+import themes from "../../themes";
 
 export const styles = StyleSheet.create({
 
     button: {
         height: 500,
         width: 300,
-        backgroundColor: '#FF5BD1',
+        backgroundColor: themes.COLORS.Roxo.escuro,
         padding: 30,
         borderRadius: 15,
         marginBottom: 50,
@@ -14,7 +15,7 @@ export const styles = StyleSheet.create({
     },
 
     buttonText: {
-        color: '#000000',
+        color: themes.COLORS.Roxo.maisClaro,
         alignContent: 'flex-end',
         textAlign: 'center',
         fontSize: 70
