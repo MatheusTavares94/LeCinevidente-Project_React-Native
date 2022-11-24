@@ -1,24 +1,24 @@
 Projetin ROADMAP
 
 { -theme.FONT
-  -useFont } OK
+  -useFont } -------
 
--Services.Api - Matheus
+-Services.Api OK
 -SplashScreen OK
 -theme.COLOR - OK
 -Home - PedroC
--routes.BottomTab - Luiza
+-routes.BottomTab OK
 
--components.BOTÕES - Gisele
+-components.BOTÕES OK
 
 (Api Required) -----------------------------
 
-{ -components.ModalFilmin
-  -ListaIndicações }
+-Context - Luiza
 
--components.Cards
+-components.ModalFilmin - Gisele
+-ListaIndicações
+
+-components.Cards - Pedro/Pedro/Matheus
+-ScreensPergunta Pedro/Pedro/Matheus
 
 -AsyncStorage
--Context
--ScreensPergunta
-

@@ -13,6 +13,13 @@ export const tmdbApi = axios.create({
    },
 })
 
+export interface listaFilmes{
+   index: string,
+   name: string,
+   url: string
+   //o que vier da API
+}
+
 //GUEST SESSION_GET ------------------------------------------------------
 
 export function criaGuestSession() {
