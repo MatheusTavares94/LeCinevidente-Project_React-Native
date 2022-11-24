@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { textChangeRangeNewSpan } from 'typescript';
 import themes from '../../themes';
 
 export const styles = StyleSheet.create({

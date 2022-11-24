@@ -19,7 +19,7 @@ export const Home = ({ navigation: { navigate } }) => {
           {'\n'}
           eu sou o olho que tudo vê.
           {'\n'}       
-          diga-me suas preferências e te darei três referências...
+          diga-me suas preferências e te darei as referências...
         </Text>
 
         <FontAwesome style={styles.Icon} name="angle-double-down" size={100} color="white" />

@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
     titleContainer: {
         width: Dimensions.get("screen").width,
         height: 110,
-        padding: 20
+        padding: 20,
+        marginBottom: 100
     },
 
     title: {
@@ -30,8 +31,8 @@ export const styles = StyleSheet.create({
     buttonContainer: {
         zIndex: 1,
         position: 'absolute',
-        right: 30,
-        bottom: 22
+        right: "20%",
+        bottom: 22,
     },
 
     flatList: {

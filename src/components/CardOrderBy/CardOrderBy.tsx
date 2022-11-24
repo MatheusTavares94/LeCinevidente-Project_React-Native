@@ -32,7 +32,7 @@ export const CardOrderBy = ({ orderMethod, selected, setSelected }: CardOrderByP
 
             <TouchableOpacity onPress={selecionarOrderDesc} style={styles.botaoOrder}>
                 <Text style={styles.textoOrder}>{orderMethod.name}</Text>
-                <MaterialIcons resizeMode="contain" name="arrow-drop-down" color={"black"} size={20} />
+                <MaterialIcons resizeMode="contain" name="arrow-downward" color={"black"} size={20} />
             </TouchableOpacity>
         </View>
     )

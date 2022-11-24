@@ -5,13 +5,12 @@ import Constants from "expo-constants";
 export const styles = StyleSheet.create({
 
     container:{
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingHorizontal: 30,
+         flex: 1,
+         flexDirection: 'column',
+         alignItems: 'center',
         width: Dimensions.get("screen").width,
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: themes.COLORS.fundo,
+         paddingTop: Constants.statusBarHeight,
+         backgroundColor: themes.COLORS.fundo
     },
     
     titleContainer:{
@@ -24,6 +23,6 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 30,
         fontWeight: 'bold',
-        color: themes.COLORS.Roxo.maisClaro,
+        color: themes.COLORS.Roxo.maisClaro
     },
 })
