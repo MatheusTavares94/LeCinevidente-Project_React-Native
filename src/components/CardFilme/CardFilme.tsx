@@ -1,9 +1,13 @@
 import React from "react"
-import { View, Text, Image, TouchableOpacity } from "react-native"
+import { View, Text, Image, TouchableOpacity, TouchableOpacityProps } from "react-native"
+import { Filme } from "../../screens/FilmesPopulares"
 import { styles } from './styles'
 
-export const CardFilme = ({ filme }) => {
+interface CardFilmeProps extends TouchableOpacityProps{
+   filme: Filme
+}
 
+export const CardFilme = ({ filme }) => {
    return (
       <TouchableOpacity activeOpacity={0.5} style={styles.filmeBox}>
          <Image
