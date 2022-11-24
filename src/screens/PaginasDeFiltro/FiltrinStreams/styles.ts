@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import Constants from "expo-constants"
-import themes from '../../themes';
+import themes from '../../../themes';
 import { preventAutoHideAsync } from 'expo-splash-screen';
 
 export const styles = StyleSheet.create({

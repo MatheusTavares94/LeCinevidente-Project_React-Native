@@ -1,16 +1,23 @@
 import React from "react"
 import { TouchableOpacity, Image } from "react-native"
-import themes from "../../themes"
+import { Stream } from "../../screens/PaginasDeFiltro/FiltrinStreams/Streams"
 import { styles } from "./styles"
 
-export const CardStream = ({ stream, selected, setSelected }) => {   
+
+export interface CardStreamProps{
+   stream: Stream
+   selected: number[]
+   setSelected: React.Dispatch<React.SetStateAction<number[]>>
+}
+
+export const CardStream = ({ stream, selected, setSelected }: CardStreamProps) => {   
 
    function addListaStream(){
       setSelected([...selected, stream.provider_id])
    }
 
    function retirarListaStream(){
-      const listaSemSelectedStream = selected.filter((e) => e.provider_id !== provider_id))
+      const listaSemSelectedStream = selected.filter(selected => selected !== stream.provider_id)
       setSelected(listaSemSelectedStream);
    }
 

@@ -8,7 +8,7 @@ import { SplashScreen } from "../screens/SplashScreen/SplashScreen"
 import { Home } from "../screens/Home"
 import { ListaFilmes } from "../screens/ListaFilmes"
 import { FilmesPopulares } from "../screens/FilmesPopulares"
-import { Streams } from "../screens/FiltrinStreams/Streams"
+import { Streams } from "../screens/PaginasDeFiltro/FiltrinStreams/Streams"
 import { Generos } from "../screens/PaginasDeFiltro/Generos"
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
