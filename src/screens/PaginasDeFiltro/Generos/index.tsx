@@ -31,6 +31,7 @@ export const Generos = () => {
 
    function addGenerosParam(){
       setSearchParam({...searchParam, with_genres: generosSelecionados.toString()})
+      
    }
 
    useEffect(() => {

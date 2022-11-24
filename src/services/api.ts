@@ -1,4 +1,9 @@
 import axios from "axios"
+import { useContext } from "react"
+import { ListaContexto } from "../context/listaContexto"
+
+
+const searchParams = useContext(ListaContexto).searchParams;
 
 export const tmdbApi = axios.create({
    baseURL: "https://api.themoviedb.org/3/",
@@ -10,29 +15,33 @@ export const tmdbApi = axios.create({
       language: "pt-BR",
       watch_region: "BR",
       region: "BR",
+      with_watch_providers: searchParams.with_watch_providers,
+      with_genres: searchParams.with_genres,
+      year: searchParams.year,
+      sort_by: searchParams.sort_by
    },
 })
 
-export interface FilmesDiscover{
-   adult: boolean,
+export interface FilmesDiscover {
+   adult: boolean
    backdrop_path: string
-   genre_ids: number[],
-   id: number,
-   original_language: string,
+   genre_ids: number[]
+   id: number
+   original_language: string
    original_title: string
    overview: string
    popularity: number
    poster_path: string
    release_date: string
    title: string
-   video: boolean,
+   video: boolean
    vote_average: number
    vote_count: number
- }
+}
 
-export interface filmeSearchParam{
+export interface filmeSearchParam {
    with_watch_providers?: string //IDs separados por Virgula ou Pipe
-   with_genres?: string  //IDs Separados por virgula
+   with_genres?: string //IDs Separados por virgula
    year?: number
    sort_by?: "popularity.asc" | "popularity.desc" | "vote_average.asc" | "vote_average.desc" //string
 }
@@ -55,14 +64,13 @@ export function deleteClassificacao(movie_id: number) {
    return tmdbApi.delete(`/movie/${movie_id}/rating`)
 }
 
-
 //GET ------------------------------------------------------
 export function getPopularMovies() {
-
    return tmdbApi.get("movie/popular")
 }
 
-export function discoverMovies(filmeSearchParam: filmeSearchParam) {
+export function discoverMovies() {
+
    return tmdbApi.get("/discover/movie")
 }
 
@@ -80,6 +88,6 @@ export function getFilmesReconmendados(movie_id: number) {
 export function getGeneros() {
    return tmdbApi.get(`/genre/movie/list`)
 }
-export function getFilmeStreamsDIsponiveis(movie_id: number){
+export function getFilmeStreamsDIsponiveis(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/watch/providers`)
 }
