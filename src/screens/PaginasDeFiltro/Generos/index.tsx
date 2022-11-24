@@ -5,6 +5,7 @@ import Constants from "expo-constants"
 import { CardGenero } from "../../../components/CardGenero/CardGenero"
 import { styles } from "./styles"
 import { ButtonGo } from "../../../components/ButtonGo"
+import { Ano } from "../Anos"
 
 export interface generos {
    id: string,
@@ -45,8 +46,11 @@ export const Generos = () => {
          <View style={styles.titleContainer}>
          <Text style={styles.title}>Selecione os gêneros</Text>
          </View>
-         <FlatList
+         <FlatList 
+         
+            style={styles.flatList}
             data={generos}
+            showsVerticalScrollIndicator={false}
             numColumns={2}
             keyExtractor={(item) => item.id}
             renderItem={item =>
@@ -54,7 +58,7 @@ export const Generos = () => {
             }
          />
           <View style={styles.buttonContainer}>
-            <ButtonGo/>
+            <ButtonGo title={"Avançar"} next={"Ano"}/>
          </View>
       </View>
    )

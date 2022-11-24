@@ -33,4 +33,9 @@ export const styles = StyleSheet.create({
         right: 30,
         bottom: 30
     },
+
+    flatList: {
+        marginBottom: 100
+    }
+
 })
