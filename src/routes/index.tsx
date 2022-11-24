@@ -10,6 +10,7 @@ import { ListaFilmes } from "../screens/ListaFilmes"
 import { FilmesPopulares } from "../screens/FilmesPopulares"
 import { Streams } from "../screens/PaginasDeFiltro/FiltrinStreams/Streams"
 import { Generos } from "../screens/PaginasDeFiltro/Generos"
+import { OrderBy } from "../screens/PaginasDeFiltro/FiltrinOrder/OrderBy"
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -27,8 +28,8 @@ export type RootStackParamList = {
    Streams: undefined
    Generos: undefined
    Decada: undefined
-   Pais: undefined
    OrderBy: undefined
+   ListaScreen: undefined
 }
 
 const TabNavigator = () => {
@@ -82,8 +83,9 @@ const StackNavigator = () => {
          <Stack.Screen name="Streams" component={Streams}/>
          <Stack.Screen name="Generos" component={Generos}/>
          {/*<Stack.Screen name="Decada" component={}/>
-         <Stack.Screen name="Pais" component={}/>
-         <Stack.Screen name="OrderBy" component={}/> */}
+         <Stack.Screen name="Pais" component={}/>*/}
+         <Stack.Screen name="OrderBy" component={OrderBy}/>
+         <Stack.Screen name="ListaScreen" component={ListaFilmes} />
       </Stack.Navigator>
    )
 }
