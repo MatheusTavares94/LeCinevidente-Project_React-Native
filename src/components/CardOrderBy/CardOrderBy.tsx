@@ -13,14 +13,14 @@ export const CardOrderBy = ({ orderMethod, selected, setSelected }: CardOrderByP
     return (
 
         <View>
-            <Text style={styles.textin}>{orderMethod.name}</Text>
+            <Text style={styles.textoOpcao}>{orderMethod.name}</Text>
 
-            <TouchableOpacity style={styles.botaozinOrder}>
-                <Text style={styles.textinOrder}>{orderMethod.value.asc}</Text>
+            <TouchableOpacity style={styles.botaoOrder}>
+                <Text style={styles.textoOrder}>{orderMethod.value.asc}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.botaozinOrder}>
-                <Text style={styles.textinOrder}>{orderMethod.value.desc}</Text>
+            <TouchableOpacity style={styles.botaoOrder}>
+                <Text style={styles.textoOrder}>{orderMethod.value.desc}</Text>
             </TouchableOpacity>
         </View>
     )

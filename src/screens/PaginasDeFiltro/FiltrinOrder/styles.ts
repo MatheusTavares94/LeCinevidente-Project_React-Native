@@ -4,7 +4,7 @@ import themes from '../../../themes';
 import { preventAutoHideAsync } from 'expo-splash-screen';
 
 export const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
@@ -14,23 +14,27 @@ export const styles = StyleSheet.create({
         backgroundColor: themes.COLORS.fundo,
     },
 
-    titleContainer:{
+    titleContainer: {
         width: Dimensions.get("screen").width,
         height: 110,
         padding: 20
     },
 
-    title:{
+    title: {
         textAlign: "center",
         fontSize: 30,
         fontWeight: 'bold',
-        color: themes.COLORS.Roxo.maisClaro,
+        color: themes.COLORS.Roxo.maisClaro
     },
 
-    buttonContainer:{
-        zIndex:1,
+    buttonContainer: {
+        zIndex: 1,
         position: 'absolute',
         right: 30,
-        bottom: 30
+        bottom: 22
     },
+
+    flatList: {
+        marginBottom: 100
+    }
 })

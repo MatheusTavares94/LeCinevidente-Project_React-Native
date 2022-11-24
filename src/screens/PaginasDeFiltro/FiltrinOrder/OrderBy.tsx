@@ -16,14 +16,14 @@ export interface OrderBy {
 export const OrderBy = () => {
    const [selectedMethod, setSelectedMethod] = useState<string>()
    const [orderMethod, setOrderMethod] = useState<OrderBy[]>([
-      { id: "1", name: "popularidade", value: { asc: "+ pop", desc: "- pop" } },
-      { id: "2", name: "nota média", value: { asc: ">", desc: "<" } },
+      { id: "1", name: "por popularidade", value: { asc: "+ pop", desc: "- pop" } },
+      { id: "2", name: " por nota", value: { asc: ">", desc: "<" } },
    ])
 
    return (
       <View style={styles.container}>
          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Em que ordem deseja ver seu futuro?</Text>
+            <Text style={styles.title}>em que ordem deseja ver seu futuro?</Text>
          </View>
 
          <FlatList

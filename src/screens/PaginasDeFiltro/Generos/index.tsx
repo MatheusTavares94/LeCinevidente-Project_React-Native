@@ -40,14 +40,14 @@ export const Generos = () => {
    //       setGenerosSelecionados([...generosSelecionados, generoSelecionado])
    // }
 
-
    return (
       <View style={styles.container}>
          <View style={styles.titleContainer}>
-         <Text style={styles.title}>Selecione os gêneros</Text>
+            <Text style={styles.title}>selecione seus gêneros favoritos</Text>
          </View>
-         <FlatList 
-         
+
+         <FlatList
+
             style={styles.flatList}
             data={generos}
             showsVerticalScrollIndicator={false}
@@ -57,8 +57,9 @@ export const Generos = () => {
                <CardGenero genero={item.item} />
             }
          />
-          <View style={styles.buttonContainer}>
-            <ButtonGo title={"Avançar"} next={"Ano"}/>
+
+         <View style={styles.buttonContainer}>
+            <ButtonGo title={"Avançar"} next={"Ano"} />
          </View>
       </View>
    )
