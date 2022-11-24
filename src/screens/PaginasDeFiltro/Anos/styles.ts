@@ -6,21 +6,22 @@ export const styles = StyleSheet.create({
 
   Container: {
     flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingHorizontal: 30,
-        width: Dimensions.get("screen").width,
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: themes.COLORS.fundo,
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    width: Dimensions.get("screen").width,
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: themes.COLORS.fundo,
   },
 
   Text: {
     paddingTop: 200,
     paddingHorizontal: 8,
-    color: "white",
-    fontSize: 25,
+    fontSize: 30,
     textAlign: "center",
-    borderRadius: 20
+    borderRadius: 20,
+    fontWeight: 'bold',
+    color: themes.COLORS.Roxo.maisClaro,
   },
 
   textInput: {
@@ -34,13 +35,15 @@ export const styles = StyleSheet.create({
     borderRadius: 10
   },
 
-  buttonContainer:{
-    zIndex:0,
+  buttonContainer: {
+    zIndex: 0,
     position: 'absolute',
     right: 30,
-    bottom: 30,
-    
-},
+    bottom: 22,
+  },
 
+  flatList: {
+    marginBottom: 100
+  }
 
 })

@@ -16,10 +16,11 @@ export const styles = StyleSheet.create({
     display: "flex",
     marginTop: 80,
     textAlign: "center",
-    fontSize: 28,
-    color: "white",
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: themes.COLORS.Roxo.maisClaro,
     padding: 20,
-    paddingHorizontal: 20
+    paddingHorizontal: 30
   },
 
   Icon: {
@@ -27,10 +28,10 @@ export const styles = StyleSheet.create({
   },
 
   ImageButton: {
-   resizeMode: "contain",
-   width: 400,
-   alignSelf: "center",
-   marginTop: -50
+    resizeMode: "contain",
+    width: 400,
+    alignSelf: "center",
+    marginTop: -50
   }
-  
+
 })
