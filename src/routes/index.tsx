@@ -84,7 +84,7 @@ const StackNavigator = () => {
          <Stack.Screen name="Generos" component={Generos}/>
          <Stack.Screen name="OrderBy" component={OrderBy}/>
          <Stack.Screen name="Ano" component={Ano}/>
-         <Stack.Screen name="ListaScreen" component={TabNavigator}/>
+         <Stack.Screen name="ListaScreen" component={ListaFilmes}/>
       </Stack.Navigator>
    )
 }
