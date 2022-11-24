@@ -7,7 +7,7 @@ interface CardFilmeProps extends TouchableOpacityProps{
    filme: Filme
 }
 
-export const CardFilme = ({ filme, ...rest }) => {
+export const CardFilme = ({ filme, ...rest }:CardFilmeProps) => {
    return (
       <TouchableOpacity {...rest } activeOpacity={0.5} style={styles.filmeBox}>
          <Image

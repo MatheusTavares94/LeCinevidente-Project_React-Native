@@ -3,10 +3,16 @@ import themes from '../../../themes';
 
 export const styles = StyleSheet.create({
     
+    IconContainer:{
+        width: "100%",
+        alignItems: 'flex-end',
+    },
+
     closeIcon: {
-        tintColor: themes.COLORS.Roxo.maisClaro,
         height: 25,
         width: 25,
+        marginBottom: 10,
+        tintColor: themes.COLORS.Roxo.maisClaro,
     },
 
     text: {
@@ -16,6 +22,25 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'justify',
         marginRight: 2
+    },
+
+    headerContainer:{
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    headerRight:{
+        paddingVertical: 5
+    },
+    generos:{
+        justifyContent: 'space-between'
+    },
+
+    filmeImagem: {
+        width: 100,
+        height: 100,
+        borderRadius: 15,
+        marginRight: 20,
+        backgroundColor: themes.COLORS.Roxo.escuro,
     },
 
     modal: {
@@ -30,7 +55,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
         borderRadius: 10,
         padding: "5%",
-        alignItems: "flex-start",
+        alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
