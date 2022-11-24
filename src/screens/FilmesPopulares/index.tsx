@@ -59,7 +59,7 @@ export const FilmesPopulares = () => {
          <FlatList
             data={filmesPopulares}
             keyExtractor={item => item.id.toString()}
-            renderItem={({ item }) => <CardFilme onPress={() => handleModal(item.id)} filme={item} />}
+            renderItem={({ item }) => <CardFilme /*onPress={() => handleModal(item.id)}*/ filme={item} />}
          />
 
          {modal && <ModalResults filmeId={filmeSelecionado} modal={modal} setModal={setModal} />}
