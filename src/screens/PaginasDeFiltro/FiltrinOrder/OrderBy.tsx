@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { ButtonGo } from "../../../components/ButtonGo"
 import { View, Text, FlatList } from "react-native"
 import { CardOrderBy } from "../../../components/CardOrderBy/CardOrderBy"
 import { styles } from "./styles"
+import { ListaContexto } from "../../../context/listaContexto"
 
 export interface OrderBy {
    id: string
@@ -16,9 +17,15 @@ export interface OrderBy {
 export const OrderBy = () => {
    const [selectedMethod, setSelectedMethod] = useState<string>()
    const [orderMethod, setOrderMethod] = useState<OrderBy[]>([
-      { id: "1", name: "por popularidade", value: { asc: "+ pop", desc: "- pop" } },
-      { id: "2", name: " por nota", value: { asc: ">", desc: "<" } },
+      { id: "1", name: "Popularidade", value: { asc: "popularity.asc", desc: "popularity.desc" } },
+      { id: "2", name: "Nota Média", value: { asc: "vote_average.asc", desc: "vote_average.desc" } },
    ])
+   const setSearchParam = useContext(ListaContexto).setSearchParams
+   const searchParam = useContext(ListaContexto).searchParams
+
+   function addOrderBy() {
+      setSearchParam({ ...searchParam, sort_by: selectedMethod })
+   }
 
    return (
       <View style={styles.container}>
@@ -33,8 +40,11 @@ export const OrderBy = () => {
          />
 
          <View style={styles.buttonContainer}>
-            <ButtonGo title="Descobrir seu futuro" next={"ListaScreen"} />
+            <ButtonGo title="Descobrir seu futuro" next={"ListaScreen"} metodoExtra={addOrderBy} />
          </View>
       </View>
    )
+}
+function setSearchParam(arg0: any) {
+   throw new Error("Function not implemented.")
 }
