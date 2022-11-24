@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { View, Text, FlatList } from "react-native"
-import { getPopularMovies } from "../../services/api"
 import { CardFilme } from "../../components/CardFilme/CardFilme"
-import Constants from "expo-constants"
-import themes from "../../themes"
+import { styles } from "./styles"
+import { ListaContexto } from "../../context/listaContexto"
 
 export const ListaFilmes = () => {
 
+   const listaDeFilmes = useContext(ListaContexto).listaDeFilmes
+
    return (
-      <View style={{ paddingTop: Constants.statusBarHeight, flex: 1, backgroundColor: themes.COLORS.fundo}}>
-         <Text style={{color: themes.COLORS.Roxo.escuro}}>Oi, serei uma lista de filmes</Text>
+
+      <View style={styles.container}>
+
+         <View style={styles.titleContainer}>
+            <Text style={styles.title}>Tcharam!!!</Text>
+         </View>
+
+         <View>
+            <FlatList
+               data={listaDeFilmes}
+               keyExtractor={item => item.id.toString()}
+               renderItem={({ item }) => <CardFilme /*onPress={() => handleModal(item.id)}*/ filme={item} />}
+            />
+         </View>
+
       </View>
+
    )
 }
