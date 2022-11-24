@@ -41,6 +41,7 @@ export const Streams = () => {
          </View>
 
          <FlatList
+            style={styles.flatList}
             data={listaStreams}
             numColumns={2}
             showsVerticalScrollIndicator={false}

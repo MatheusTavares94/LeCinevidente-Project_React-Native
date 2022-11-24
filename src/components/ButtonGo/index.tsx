@@ -12,7 +12,7 @@ interface ButtonGoProps extends TouchableOpacityProps {
    "Genero" | 
    "Streams" | 
    "Generos" | 
-   "Decada" | 
+   "Ano" | 
    "Pais" | 
    "OrderBy" |
    "ListaScreen";

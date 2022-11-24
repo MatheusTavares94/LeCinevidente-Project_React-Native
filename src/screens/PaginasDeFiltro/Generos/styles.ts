@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 30,
         width: Dimensions.get("screen").width,
         paddingTop: Constants.statusBarHeight,
-        // backgroundColor: themes.COLORS.Roxo.escuro,
+        backgroundColor: themes.COLORS.fundo,
     },
     
     titleContainer:{
@@ -31,8 +31,10 @@ export const styles = StyleSheet.create({
         position: 'absolute',
         right: 50,
         bottom: 0,
-    
-
     },
+
+    flatList: {
+        marginBottom: 100
+    }
 
 })

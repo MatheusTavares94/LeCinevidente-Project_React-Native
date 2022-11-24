@@ -31,7 +31,7 @@ export default {
          escuro: "rgba(114,91,162,255)",
       },
 
-      fundo: "#3E3C42",
+         fundo: "#3E3C42",
    },
 
    FONTS: {
