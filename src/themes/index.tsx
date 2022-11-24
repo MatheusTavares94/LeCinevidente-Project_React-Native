@@ -27,8 +27,8 @@ export default {
    COLORS: {
       Roxo: {
          maisClaro: "rgba(223,210,254,255)",
-         medio: "rgba(172,134,255,255)",
-         escuro: "rgba(114,91,162,255)",
+         medio: "rgba(172,134,255,255)", //#AC86FF
+         escuro: "rgba(114,91,162,255)", //#725BA2
       },
 
          fundo: "#3E3C42",
