@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ButtonGo } from "../../../components/ButtonGo"
 import { View, Text, FlatList } from "react-native"
 import { getStreams } from "../../../services/api"
 import { CardStream } from "../../../components/CardStreams/CardStream"
 import { styles } from "./styles"
+import { ListaContexto } from "../../../context/listaContexto"
 
 interface ResponseGetStream {
    results: Stream[]
@@ -17,8 +18,10 @@ export interface Stream {
 }
 
 export const Streams = () => {
-   const [streamSelected, setStreamSelected] = useState<number[]>([])
    const [listaStreams, setListaStreams] = useState<Stream[]>([])
+   const [streamSelected, setStreamSelected] = useState<string[]>([])
+   const setSearchParam = useContext(ListaContexto).setSearchParams
+   const searchParam = useContext(ListaContexto).searchParams
 
    function obterStreams() {
       getStreams()
@@ -30,8 +33,12 @@ export const Streams = () => {
          })
    }
 
+   function addStream(){
+      setSearchParam({...searchParam, with_watch_providers: streamSelected.toString()})
+   }
+
    useEffect(() => {
-      obterStreams()
+      obterStreams()      
    }, [])
 
    return (
@@ -51,7 +58,7 @@ export const Streams = () => {
             )}
          />
          <View style={styles.buttonContainer}>
-            <ButtonGo title="Avançar" next={"Generos"} />
+            <ButtonGo title="Avançar" next={"Generos"} metodoExtra={addStream}/>
          </View>
       </View>
    )

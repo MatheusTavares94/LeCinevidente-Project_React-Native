@@ -7,23 +7,30 @@ import { RootStackParamList } from "../../routes"
 
 interface ButtonGoProps extends TouchableOpacityProps {
    title: string;
+   metodoExtra?:() => void;
    next?: "SplashScreen" | 
    "HomeScreen" | 
    "Generos" | 
    "Streams" | 
-   "Generos" | 
    "Ano" | 
    "OrderBy"|
    "ListaScreen";
 }
 
+
+
 type AuthScreenProp = NativeStackNavigationProp<RootStackParamList, "SplashScreen">
 
-export const ButtonGo = ({ title, next, ...resto }: ButtonGoProps) => {
+export const ButtonGo = ({ title, next, metodoExtra, ...resto }: ButtonGoProps) => {
    const nav = useNavigation<AuthScreenProp>()
+   
+   function handleFazerCoisas(){
+      nav.navigate(next)
+      metodoExtra()
+   }
 
    return (
-      <TouchableOpacity style={styles.button} onPress={() => nav.navigate(next)} {...resto}>
+      <TouchableOpacity style={styles.button} onPress={handleFazerCoisas} {...resto}>
          <Text style={styles.buttonText}>{title}</Text>
       </TouchableOpacity>
    )

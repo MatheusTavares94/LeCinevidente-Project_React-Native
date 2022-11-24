@@ -1,4 +1,6 @@
 import axios from "axios"
+import { useContext } from "react"
+import { ListaContexto } from "../context/listaContexto"
 
 export const tmdbApi = axios.create({
    baseURL: "https://api.themoviedb.org/3/",
@@ -13,11 +15,28 @@ export const tmdbApi = axios.create({
    },
 })
 
-export interface listaFilmes{
-   index: string,
-   name: string,
-   url: string
-   //o que vier da API
+export interface FilmesDiscover {
+   adult: boolean
+   backdrop_path: string
+   genre_ids: number[]
+   id: number
+   original_language: string
+   original_title: string
+   overview: string
+   popularity: number
+   poster_path: string
+   release_date: string
+   title: string
+   video: boolean
+   vote_average: number
+   vote_count: number
+}
+
+export interface filmeSearchParam {
+   with_watch_providers?: string //IDs separados por Virgula ou Pipe
+   with_genres?: string //IDs Separados por virgula
+   year?: number
+   sort_by?: string
 }
 
 //GUEST SESSION_GET ------------------------------------------------------
@@ -38,15 +57,15 @@ export function deleteClassificacao(movie_id: number) {
    return tmdbApi.delete(`/movie/${movie_id}/rating`)
 }
 
-
 //GET ------------------------------------------------------
 export function getPopularMovies() {
-
    return tmdbApi.get("movie/popular")
 }
 
-export function discoverMovies() {
-   return tmdbApi.get("/discover/movie")
+export function discoverMovies(searchParams: filmeSearchParam) {
+   const params = searchParams;
+
+   return tmdbApi.get("/discover/movie", { params })
 }
 
 export function getStreams() {
@@ -63,6 +82,6 @@ export function getFilmesReconmendados(movie_id: number) {
 export function getGeneros() {
    return tmdbApi.get(`/genre/movie/list`)
 }
-export function getFilmeStreamsDIsponiveis(movie_id: number){
+export function getFilmeStreamsDIsponiveis(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/watch/providers`)
 }
