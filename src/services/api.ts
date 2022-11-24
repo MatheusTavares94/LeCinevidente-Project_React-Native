@@ -2,9 +2,6 @@ import axios from "axios"
 import { useContext } from "react"
 import { ListaContexto } from "../context/listaContexto"
 
-
-const searchParams = useContext(ListaContexto).searchParams;
-
 export const tmdbApi = axios.create({
    baseURL: "https://api.themoviedb.org/3/",
    headers: {
@@ -15,10 +12,6 @@ export const tmdbApi = axios.create({
       language: "pt-BR",
       watch_region: "BR",
       region: "BR",
-      with_watch_providers: searchParams.with_watch_providers,
-      with_genres: searchParams.with_genres,
-      year: searchParams.year,
-      sort_by: searchParams.sort_by
    },
 })
 
@@ -69,9 +62,10 @@ export function getPopularMovies() {
    return tmdbApi.get("movie/popular")
 }
 
-export function discoverMovies() {
+export function discoverMovies(searchParams: filmeSearchParam) {
+   const params = searchParams;
 
-   return tmdbApi.get("/discover/movie")
+   return tmdbApi.get("/discover/movie", { params })
 }
 
 export function getStreams() {

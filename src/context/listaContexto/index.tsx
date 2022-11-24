@@ -42,7 +42,7 @@ export const ProvedorLista = ({children}: ProvedorListaProps ) => {
     const [listaDeFilmes, setListaDeFilmes] = useState<FilmesDiscover[]>([]);
 
     useEffect(()=>{
-        discoverMovies().then(res=>{
+        discoverMovies(searchParams).then(res=>{
             console.log(res.data);
             setListaDeFilmes(res ? res.data.results : [])
         }).catch(err=>{
