@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { View, Text, FlatList } from "react-native"
 import { getGeneros } from "../../../services/api"
 import Constants from "expo-constants"
@@ -6,6 +6,7 @@ import { CardGenero } from "../../../components/CardGenero/CardGenero"
 import { styles } from "./styles"
 import { ButtonGo } from "../../../components/ButtonGo"
 import { Ano } from "../Anos"
+import { ListaContexto } from "../../../context/listaContexto"
 
 export interface generos {
    id: string,
@@ -13,6 +14,8 @@ export interface generos {
 }
 
 export const Generos = () => {
+   const setSearchParam = useContext(ListaContexto).setSearchParams
+   const searchParam = useContext(ListaContexto).searchParams
 
 
    const [generos, setGeneros] = useState<generos[]>([])

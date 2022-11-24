@@ -13,11 +13,28 @@ export const tmdbApi = axios.create({
    },
 })
 
-export interface listaFilmes{
-   index: string,
-   name: string,
-   url: string
-   //o que vier da API
+export interface FilmesDiscover{
+   adult: boolean,
+   backdrop_path: string
+   genre_ids: number[],
+   id: number,
+   original_language: string,
+   original_title: string
+   overview: string
+   popularity: number
+   poster_path: string
+   release_date: string
+   title: string
+   video: boolean,
+   vote_average: number
+   vote_count: number
+ }
+
+export interface filmeSearchParam{
+   with_watch_providers?: string //IDs separados por Virgula ou Pipe
+   with_genres?: string  //IDs Separados por virgula
+   year?: number
+   sort_by?: "popularity.asc" | "popularity.desc" | "vote_average.asc" | "vote_average.desc" //string
 }
 
 //GUEST SESSION_GET ------------------------------------------------------
@@ -45,7 +62,7 @@ export function getPopularMovies() {
    return tmdbApi.get("movie/popular")
 }
 
-export function discoverMovies() {
+export function discoverMovies(filmeSearchParam: filmeSearchParam) {
    return tmdbApi.get("/discover/movie")
 }
 

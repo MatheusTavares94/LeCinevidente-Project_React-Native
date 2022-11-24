@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { listaFilmes } from '../../services/api';
+import React, { createContext, useEffect, useState } from 'react';
+import { filmeSearchParam, FilmesDiscover, discoverMovies } from '../../services/api';
 
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -8,41 +8,52 @@ interface ProvedorListaProps {
 }
 
 interface ListaContextoProps {
-    listaDeFilmes: listaFilmes[];
-    salvaListaDeFilmes: (listaFilmes: listaFilmes[]) => void;
-    removeFilmeDaLista: (index: string) => void;
+    listaDeFilmes: FilmesDiscover[];
+    searchParams: filmeSearchParam;
+    setSearchParams: React.Dispatch<React.SetStateAction<filmeSearchParam>>;
+    setListaDeFilmes: React.Dispatch<React.SetStateAction<FilmesDiscover[]>>;
 }
 
 export const ListaContexto = createContext<ListaContextoProps>({
     listaDeFilmes: [{
-        index: "",
-        name: "",
-        url: "",
+        adult: null,
+        backdrop_path: "",
+        genre_ids: [],
+        id: 0,
+        original_language: "",
+        original_title: "",
+        overview: "",
+        popularity: 0,
+        poster_path: "",
+        release_date: "",
+        title: "",
+        video: null,
+        vote_average: 0,
+        vote_count: 0,
     }],
-    salvaListaDeFilmes: (listaFilmes: listaFilmes[]) => { },
-    removeFilmeDaLista: (index: string) => { },
+    searchParams:{},
+    setSearchParams: () => {},
+    setListaDeFilmes: () => {}
+
 });
 
 export const ProvedorLista = ({children}: ProvedorListaProps ) => {
-    const [listaDeFilmes, setListaDeFilmes] = useState<listaFilmes[]>([]);
+    const [searchParams, setSearchParams] = useState<filmeSearchParam>();
+    const [listaDeFilmes, setListaDeFilmes] = useState<FilmesDiscover[]>([]);
 
-    function salvaListaDeFilmes(listaFilmes: listaFilmes[]) {
-        setListaDeFilmes(listaFilmes)
-    }
-
-    function removeFilmeDaLista(index: string) {
-        let novaListaDeFilmes = listaDeFilmes.filter((filme) => {
-            return filme.index !== index
+    useEffect(()=>{
+        discoverMovies(searchParams).then(res=>{
+            console.log(res.data);
+            setListaDeFilmes(res ? res.data.results : [])
+        }).catch(err=>{
+            console.log(err);
         })
-
-        setListaDeFilmes(novaListaDeFilmes);
-    }
+    },[])   
 
     return (
         <ListaContexto.Provider
-            value={{ listaDeFilmes, salvaListaDeFilmes, removeFilmeDaLista }}
-        >
+            value={{ searchParams, setSearchParams, listaDeFilmes, setListaDeFilmes}}>
             {children}
         </ListaContexto.Provider>
     )
-}
+};
