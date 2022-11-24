@@ -43,7 +43,7 @@ export interface filmeSearchParam {
    with_watch_providers?: string //IDs separados por Virgula ou Pipe
    with_genres?: string //IDs Separados por virgula
    year?: number
-   sort_by?: "popularity.asc" | "popularity.desc" | "vote_average.asc" | "vote_average.desc" //string
+   sort_by?: string
 }
 
 //GUEST SESSION_GET ------------------------------------------------------
