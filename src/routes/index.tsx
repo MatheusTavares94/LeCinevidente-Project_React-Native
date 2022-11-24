@@ -25,7 +25,6 @@ export type RootTabParamList = {
 export type RootStackParamList = {
    SplashScreen: undefined
    HomeScreen: undefined
-   Genero: undefined
    Streams: undefined
    Generos: undefined
    Ano: undefined
