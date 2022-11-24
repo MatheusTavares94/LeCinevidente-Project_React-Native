@@ -13,10 +13,8 @@ export const styles = StyleSheet.create({
     buttonText: {
         color: themes.COLORS.Roxo.maisClaro,
         fontSize: 40,
-        // fontWeight: 'bold',
         paddingVertical: 10,
         paddingHorizontal: 10,
         
 },
-    
 })
