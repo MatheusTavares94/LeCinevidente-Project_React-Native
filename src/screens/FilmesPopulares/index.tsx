@@ -4,6 +4,7 @@ import { getPopularMovies } from "../../services/api"
 import { CardFilme } from "../../components/CardFilme/CardFilme"
 import Constants from "expo-constants"
 import themes from "../../themes"
+import { ModalResults } from "../../components/Modais/ModalResults"
 
 
 interface ResponseFilmesPop {
@@ -57,3 +58,12 @@ export const FilmesPopulares = () => {
       </View>
    )
 }
+
+// {
+//    modal &&
+//       <ModalResults
+//          index={indexSelecionado}
+//          modal={modal}
+//          setModal={setModal}
+//    />
+// }
