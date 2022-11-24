@@ -17,8 +17,6 @@ interface ButtonGoProps extends TouchableOpacityProps {
    "ListaScreen";
 }
 
-
-
 type AuthScreenProp = NativeStackNavigationProp<RootStackParamList, "SplashScreen">
 
 export const ButtonGo = ({ title, next, metodoExtra, ...resto }: ButtonGoProps) => {
@@ -26,6 +24,7 @@ export const ButtonGo = ({ title, next, metodoExtra, ...resto }: ButtonGoProps) 
    
    function handleFazerCoisas(){
       nav.navigate(next)
+      metodoExtra === undefined ? null:
       metodoExtra()
    }
 
