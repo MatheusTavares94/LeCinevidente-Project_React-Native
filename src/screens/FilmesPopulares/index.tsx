@@ -11,10 +11,10 @@ interface ResponseFilmesPop {
    "page": number,
    "total_results": number,
    "total_pages": number,
-  "results": Filme[]
+   "results": Filme[]
 }
 
-export interface Filme{
+export interface Filme {
    "id": number,
    "adult": boolean,
    "backdrop_path": string,
@@ -29,10 +29,14 @@ export interface Filme{
    "video": boolean,
    "vote_average": number,
    "vote_count": number,
- }
+}
 
 export const FilmesPopulares = () => {
    const [filmesPopulares, setFilmesPopulares] = useState<Filme[]>([])
+
+   const [modal, setModal] = useState<boolean>(false)
+
+   const [indexSelecionado, setIndexSelecionado] = useState<number>()
 
    function oberFilmesLista() {
       getPopularMovies()
@@ -44,6 +48,11 @@ export const FilmesPopulares = () => {
          })
    }
 
+   function handleModal(id) {
+      setIndexSelecionado(id)
+      setModal(true)
+   }
+
    useEffect(() => {
       oberFilmesLista()
    }, [])
@@ -52,18 +61,19 @@ export const FilmesPopulares = () => {
       <View style={{ paddingTop: Constants.statusBarHeight, backgroundColor: themes.COLORS.fundo }}>
          <FlatList
             data={filmesPopulares}
-            renderItem={({item}) => <CardFilme filme={item} />}
             keyExtractor={item => item.id.toString()}
+            renderItem={({ item }) => <CardFilme onPress={handleModal(item.id)} filme={item} />}
          />
+
+         {
+            modal &&
+            <ModalResults
+               index={indexSelecionado}
+               modal={modal}
+               setModal={setModal}
+            />
+         }
+
       </View>
    )
 }
-
-// {
-//    modal &&
-//       <ModalResults
-//          index={indexSelecionado}
-//          modal={modal}
-//          setModal={setModal}
-//    />
-// }
