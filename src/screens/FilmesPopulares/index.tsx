@@ -26,7 +26,7 @@ export const FilmesPopulares = () => {
       <View style={{ paddingTop: Constants.statusBarHeight, backgroundColor: themes.COLORS.fundo }}>
          <FlatList
             data={filmesPopulares}
-            renderItem={item => <CardFilme filme={item.item} />}
+            renderItem={({item}) => <CardFilme filme={item} />}
             //keyExtractor={item}
          />
       </View>

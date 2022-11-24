@@ -1,24 +1,30 @@
 import React from "react"
-import { Text, TouchableOpacity } from 'react-native'
+import { NativeStackNavigationProp } from "@react-navigation/native-stack"
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
 import { styles } from "./styles"
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native"
+import { RootStackParamList } from "../../routes"
 
-export const ButtonGo = ({next}) => {
-
-    const nav = useNavigation();
-
-    return (
-        <TouchableOpacity
-            
-            style={styles.button}
-             onPress = {()=>nav.navigate(next)}
-             >
-            <Text
-                style={styles.buttonText}
-            >
-                GO
-            </Text>
-        </TouchableOpacity>
-    )
+interface ButtonGoProps extends TouchableOpacityProps {
+   title: string;
+   next?: "SplashScreen" | 
+   "HomeScreen" | 
+   "Genero" | 
+   "Streams" | 
+   "Generos" | 
+   "Decada" | 
+   "Pais" | 
+   "OrderBy";
 }
 
+type AuthScreenProp = NativeStackNavigationProp<RootStackParamList, "SplashScreen">
+
+export const ButtonGo = ({ title, next, ...resto }: ButtonGoProps) => {
+   const nav = useNavigation<AuthScreenProp>()
+
+   return (
+      <TouchableOpacity style={styles.button} onPress={() => nav.navigate(next)} {...resto}>
+         <Text style={styles.buttonText}>{title}</Text>
+      </TouchableOpacity>
+   )
+}
