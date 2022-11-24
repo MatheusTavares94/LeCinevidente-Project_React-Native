@@ -16,8 +16,8 @@ export interface OrderBy {
 export const OrderBy = () => {
    const [selectedMethod, setSelectedMethod] = useState<string>()
    const [orderMethod, setOrderMethod] = useState<OrderBy[]>([
-      { id: "1", name: "Popularidade", value: { asc: "popularity.asc", desc: "popularity.desc" } },
-      { id: "2", name: "Nota Média", value: { asc: "vote_average.asc", desc: "vote_average.desc" } },
+      { id: "1", name: "popularidade", value: { asc: "+ pop", desc: "- pop" } },
+      { id: "2", name: "nota média", value: { asc: ">", desc: "<" } },
    ])
 
    return (
