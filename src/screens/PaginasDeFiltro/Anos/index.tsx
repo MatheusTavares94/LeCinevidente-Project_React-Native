@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Text, TextInput, View } from "react-native"
 import { ButtonGo } from "../../../components/ButtonGo"
 import { styles } from "./styles"
 
-
-
-
 export const Ano = () => {
-
   const [ano, setAno] = useState<number>();
 
   function enviaAno() {
@@ -26,7 +22,7 @@ export const Ano = () => {
           onChangeText={(ano) => setAno(parseInt(ano))}/>
 
           <View style={styles.buttonContainer}>
-            <ButtonGo title="Avançar" onPress={enviaAno}/>
+            <ButtonGo title="Avançar" next={"OrderBy"} />
          </View>
       
       </View>

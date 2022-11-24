@@ -84,8 +84,8 @@ const StackNavigator = () => {
          <Stack.Screen name="Streams" component={Streams}/>
          <Stack.Screen name="Generos" component={Generos}/>
          <Stack.Screen name="OrderBy" component={OrderBy}/>
-         <Stack.Screen name="ListaScreen" component={ListaFilmes} />
          <Stack.Screen name="Ano" component={Ano}/>
+         <Stack.Screen name="ListaScreen" component={TabNavigator}/>
       </Stack.Navigator>
    )
 }
