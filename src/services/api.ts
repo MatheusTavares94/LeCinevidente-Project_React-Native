@@ -57,13 +57,12 @@ export function getMovieById(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}`)
 }
 
-export function getTranslations(movie_id: number) {
-   return tmdbApi.get(`/movie/${movie_id}/translations`)
-}
-
 export function getFilmesReconmendados(movie_id: number) {
    return tmdbApi.get(`/movie/${movie_id}/similar`)
 }
 export function getGeneros() {
    return tmdbApi.get(`/genre/movie/list`)
+}
+export function getFilmeStreamsDIsponiveis(movie_id: number){
+   return tmdbApi.get(`/movie/${movie_id}/watch/providers`)
 }
