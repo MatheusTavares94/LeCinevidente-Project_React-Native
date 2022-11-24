@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 30,
         width: Dimensions.get("screen").width,
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: themes.COLORS.fundo,
+        backgroundColor: themes.COLORS.fundo
     },
     
     titleContainer:{
@@ -29,12 +29,12 @@ export const styles = StyleSheet.create({
     buttonContainer:{
         zIndex:1,
         position: 'absolute',
-        right: 50,
-        bottom: 0,
+        right: 30,
+        bottom: 22
     },
 
     flatList: {
-        marginBottom: 100
+        marginBottom: 100,
     }
 
 })

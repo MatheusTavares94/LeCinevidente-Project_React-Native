@@ -1,7 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import Constants from "expo-constants"
 import themes from '../../../themes';
-import { preventAutoHideAsync } from 'expo-splash-screen';
 
 export const styles = StyleSheet.create({
     container:{
@@ -31,7 +30,7 @@ export const styles = StyleSheet.create({
         zIndex:1,
         position: 'absolute',
         right: 30,
-        bottom: 30
+        bottom: 22
     },
 
     flatList: {

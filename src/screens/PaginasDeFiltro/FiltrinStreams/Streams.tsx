@@ -37,7 +37,7 @@ export const Streams = () => {
    return (
       <View style={styles.container}>
          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Escolha os seus Streams favoritos</Text>
+            <Text style={styles.title}>selecione seus streams favoritos</Text>
          </View>
 
          <FlatList

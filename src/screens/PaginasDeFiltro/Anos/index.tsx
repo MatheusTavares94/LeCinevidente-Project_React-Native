@@ -14,7 +14,7 @@ export const Ano = () => {
   return (
       <View style={styles.Container}>
           <Text style={styles.Text}>
-            Digite o ano que deseja procurar
+            digite o ano que deseja procurar
           </Text>
 
         
