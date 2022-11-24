@@ -7,7 +7,7 @@ import { RootStackParamList } from "../../routes"
 
 interface ButtonGoProps extends TouchableOpacityProps {
    title: string;
-   metodoExtra:() => void;
+   metodoExtra?:() => void;
    next?: "SplashScreen" | 
    "HomeScreen" | 
    "Generos" | 
