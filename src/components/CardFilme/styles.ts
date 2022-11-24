@@ -25,9 +25,8 @@ export const styles = StyleSheet.create({
     
     filmeTitulo: {
         textAlign: "left",
-        fontSize: 18,
+        fontSize: 19,
         color: "#000",
         width: 200,
-        backgroundColor: "red"
     },
 })

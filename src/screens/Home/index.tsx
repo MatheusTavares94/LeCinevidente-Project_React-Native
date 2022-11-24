@@ -15,7 +15,11 @@ export const Home = ({ navigation: { navigate } }) => {
 
       <View>
         <Text style={styles.Text}>
-          bora encontrar um filme pra ver???
+          bem-vind@!
+          {'\n'}
+          eu sou o olho que tudo vê.
+          {'\n'}       
+          diga-me suas preferências e te darei três referências...
         </Text>
 
         <FontAwesome style={styles.Icon} name="angle-double-down" size={100} color="white" />
@@ -24,7 +28,7 @@ export const Home = ({ navigation: { navigate } }) => {
           <Image source={Icon} style={styles.ImageButton} />
         </TouchableOpacity>
       </View>
-      
+
     </View>
 
   )

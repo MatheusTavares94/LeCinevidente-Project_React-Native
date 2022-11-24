@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 28,
     color: "white",
-    padding: 20
+    padding: 20,
+    paddingHorizontal: 20
   },
 
   Icon: {

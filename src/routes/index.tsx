@@ -67,7 +67,7 @@ const TabNavigator = () => {
             component={FilmesPopulares}
             options={{
                tabBarIcon: ({ color }) => {
-                  return <MaterialIcons resizeMode="contain" name="elderly" color={color} size={30} />
+                  return <MaterialIcons resizeMode="contain" name="star" color={color} size={30} />
                },
             }}
          />
