@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { View, Text, FlatList } from "react-native"
 import { getGeneros } from "../../../services/api"
-import Constants from "expo-constants"
 import { CardGenero } from "../../../components/CardGenero/CardGenero"
 import { styles } from "./styles"
 import { ButtonGo } from "../../../components/ButtonGo"
-import { Ano } from "../Anos"
 import { ListaContexto } from "../../../context/listaContexto"
 
-export interface generos {
+export interface genero {
    id: string,
    name: string,
 }
@@ -16,9 +14,9 @@ export interface generos {
 export const Generos = () => {
    const setSearchParam = useContext(ListaContexto).setSearchParams
    const searchParam = useContext(ListaContexto).searchParams
+   const [generos, setGeneros] = useState<genero[]>([])
+   const [generosSelecionados, setGenerosSelecionados] = useState<string[]>([])
 
-
-   const [generos, setGeneros] = useState<generos[]>([])
 
    function addGenres() {
       getGeneros()
@@ -31,17 +29,13 @@ export const Generos = () => {
          })
    }
 
+   function addGenerosParam(){
+      setSearchParam({...searchParam, with_genres: generosSelecionados.toString()})
+   }
+
    useEffect(() => {
       addGenres()
    }, [])
-
-   const [generosSelecionados, setGenerosSelecionados] = useState<[]>([])
-   const [generoSelecionado, setGeneroSelecionados] = useState()
-
-   // function selecionarGenero(id:string){
-   //    let genero  = 
-   //       setGenerosSelecionados([...generosSelecionados, generoSelecionado])
-   // }
 
    return (
       <View style={styles.container}>
@@ -50,19 +44,18 @@ export const Generos = () => {
          </View>
 
          <FlatList
-
             style={styles.flatList}
             data={generos}
             showsVerticalScrollIndicator={false}
             numColumns={2}
             keyExtractor={(item) => item.id}
-            renderItem={item =>
-               <CardGenero genero={item.item} />
+            renderItem={({item}) =>
+               <CardGenero genero={item} selected={generosSelecionados} setSelected={setGenerosSelecionados} />
             }
          />
 
          <View style={styles.buttonContainer}>
-            <ButtonGo title={"Avançar"} next={"Ano"} />
+            <ButtonGo title={"Avançar"} next={"Ano"} metodoExtra={addGenerosParam} />
          </View>
       </View>
    )
