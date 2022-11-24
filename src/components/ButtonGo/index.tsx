@@ -9,12 +9,12 @@ interface ButtonGoProps extends TouchableOpacityProps {
    title: string;
    next?: "SplashScreen" | 
    "HomeScreen" | 
-   "Genero" | 
+   "Generos" | 
    "Streams" | 
    "Generos" | 
    "Ano" | 
-   "Pais" | 
-   "OrderBy";
+   "OrderBy"|
+   "ListaScreen";
 }
 
 type AuthScreenProp = NativeStackNavigationProp<RootStackParamList, "SplashScreen">
